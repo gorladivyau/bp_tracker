@@ -4,6 +4,12 @@ A full-stack web application for tracking patient blood pressure readings. Built
 
 ---
 
+## 🎬 Demo
+
+![Demo](assets/demo.gif)
+
+---
+
 ## 🧩 Project Structure
 
 ```
