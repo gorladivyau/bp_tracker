@@ -1,0 +1,21 @@
+# Use slim Python 3.11 image
+FROM python:3.11-slim
+
+# Set working directory inside the container
+WORKDIR /app
+
+# Copy Streamlit app code
+COPY streamlit/ /app/streamlit
+
+# Copy and install dependencies
+COPY requirements_streamlit.txt .
+RUN pip install -r requirements_streamlit.txt
+
+# Expose Streamlit default port
+EXPOSE 8501
+
+# Ensure logs are immediately flushed
+ENV PYTHONUNBUFFERED=1
+
+# Start Streamlit app
+CMD ["streamlit", "run", "/app/streamlit/app.py", "--server.port", "8501", "--server.address", "0.0.0.0"]
